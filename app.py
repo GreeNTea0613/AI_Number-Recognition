@@ -12,7 +12,6 @@ CORS(app)
 model = tf.keras.models.load_model("model_1000.keras")
 
 def preprocess_image(img: Image.Image):
-
     img = img.convert("RGB")
     img.save("debug_1_raw.png")
 

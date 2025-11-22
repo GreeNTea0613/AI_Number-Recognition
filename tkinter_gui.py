@@ -26,7 +26,6 @@ canvas.pack(padx=10, pady=10)
 draw_image = Image.new("RGB", (CANVAS_SIZE, CANVAS_SIZE), BACKGROUND_COLOR)
 draw = ImageDraw.Draw(draw_image)
 
-
 def draw_line(event):
     x, y = event.x, event.y
     r = BRUSH_RADIUS
@@ -39,15 +38,12 @@ def draw_line(event):
 
 canvas.bind("<B1-Motion>", draw_line)
 
-
 def clear_canvas():
     canvas.delete("all")
     draw.rectangle([0, 0, CANVAS_SIZE, CANVAS_SIZE], fill=BACKGROUND_COLOR)
 
-
 clear_btn = tk.Button(root, text="クリア", command=clear_canvas)
 clear_btn.pack(pady=5)
-
 
 def predict_digit():
     buffer = io.BytesIO()
